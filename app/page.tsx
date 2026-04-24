@@ -107,7 +107,7 @@ export default function LandingPage() {
         <div className="flex gap-2 min-w-max px-4">
           {[
              { aspect: "aspect-[3/4]", url: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=800&fit=crop" },
-             { aspect: "aspect-[4/5]", url: "https://images.unsplash.com/photo-1527581552554-e4af8beec247?w=600&h=800&fit=crop" },
+             { aspect: "aspect-[4/5]", url: "https://images.unsplash.com/photo-1431540015161-0bf868a2d407?w=600&h=800&fit=crop" },
              { aspect: "aspect-square", url: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&h=800&fit=crop" },
              { aspect: "aspect-[16/9] w-96", url: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=800&h=600&fit=crop" },
              { aspect: "aspect-[4/5]", url: "https://images.unsplash.com/photo-1517502884422-41eaead166d4?w=600&h=800&fit=crop" },

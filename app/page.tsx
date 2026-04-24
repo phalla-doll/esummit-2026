@@ -48,11 +48,15 @@ export default function LandingPage() {
             className="flex items-center gap-4 mb-8"
           >
              <div className="flex -space-x-3">
-              {[1, 2, 3].map((i) => (
+              {[
+                "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop",
+                "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop",
+                "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=100&h=100&fit=crop"
+              ].map((src, i) => (
                 <div key={i} className="w-10 h-10 rounded-full border-2 border-white overflow-hidden relative">
                   <Image 
-                    src={`https://picsum.photos/seed/speaker${i}/100/100`}
-                    alt={`Speaker ${i}`}
+                    src={src}
+                    alt={`Speaker ${i + 1}`}
                     fill
                     className="object-cover"
                     referrerPolicy="no-referrer"
@@ -102,13 +106,13 @@ export default function LandingPage() {
       <section className="mt-12 overflow-hidden mx-auto">
         <div className="flex gap-2 min-w-max px-4">
           {[
-             { aspect: "aspect-[3/4]", id: 11 },
-             { aspect: "aspect-[4/5]", id: 12 },
-             { aspect: "aspect-square", id: 13 },
-             { aspect: "aspect-[16/9] w-96", id: 14 },
-             { aspect: "aspect-[4/5]", id: 15 },
-             { aspect: "aspect-[3/4]", id: 16 },
-             { aspect: "aspect-square", id: 17 }
+             { aspect: "aspect-[3/4]", url: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=800&fit=crop" },
+             { aspect: "aspect-[4/5]", url: "https://images.unsplash.com/photo-1556761175-5973eafb0451?w=600&h=800&fit=crop" },
+             { aspect: "aspect-square", url: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&h=800&fit=crop" },
+             { aspect: "aspect-[16/9] w-96", url: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=800&h=600&fit=crop" },
+             { aspect: "aspect-[4/5]", url: "https://images.unsplash.com/photo-1517502884422-41eaead166d4?w=600&h=800&fit=crop" },
+             { aspect: "aspect-[3/4]", url: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=800&fit=crop" },
+             { aspect: "aspect-square", url: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=800&fit=crop" }
           ].map((item, i) => (
             <motion.div 
               initial={{ opacity: 0, scale: 0.95 }}
@@ -119,7 +123,7 @@ export default function LandingPage() {
               className={`relative h-64 sm:h-80 md:h-96 w-48 sm:w-56 md:w-64 rounded-sm overflow-hidden flex-shrink-0 ${item.aspect.includes('w-') ? item.aspect : ''}`}
             >
               <Image 
-                src={`https://picsum.photos/seed/venue${item.id}/600/800`}
+                src={item.url}
                 alt="Venue"
                 fill
                 className="object-cover"
@@ -147,7 +151,7 @@ export default function LandingPage() {
           <div className="lg:col-span-4 self-end">
             <div className="relative aspect-[4/3] rounded-sm overflow-hidden mt-12 w-full lg:w-5/6">
               <Image 
-                src="https://picsum.photos/seed/experience1/600/400"
+                src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop"
                 alt="Workshop presentation"
                 fill
                 className="object-cover"
@@ -192,7 +196,7 @@ export default function LandingPage() {
           <div className="lg:col-span-4 self-start">
              <div className="relative aspect-[3/4] rounded-sm overflow-hidden w-full lg:w-4/5 ml-auto">
               <Image 
-                src="https://picsum.photos/seed/experience2/600/800"
+                src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=600&h=800&fit=crop"
                 alt="Conference room"
                 fill
                 className="object-cover"
@@ -211,12 +215,11 @@ export default function LandingPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
-            { name: 'Henri Robert', role: 'Founder & CEO' },
-            { name: 'James Killer', role: 'Creative Director' },
-            { name: 'Founder, Edilta', role: 'UX Design Lead' },
-            { name: 'Kathleen Breitman', role: 'Marketing Consultant' },
-            { name: 'Henri Robert', role: 'Innovation Coach' }
-          ].slice(0, 4).map((expert, i) => (
+            { name: 'Henri Robert', role: 'Founder & CEO', image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop" },
+            { name: 'James Killer', role: 'Creative Director', image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop" },
+            { name: 'Founder, Edilta', role: 'UX Design Lead', image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop" },
+            { name: 'Kathleen Breitman', role: 'Marketing Consultant', image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop" }
+          ].map((expert, i) => (
             <div key={i} className="bg-[#F7F7F7] p-6 rounded-sm flex flex-col group hover:shadow-lg transition-all duration-300">
               <div className="flex justify-between items-start mb-6">
                 <div>
@@ -232,7 +235,7 @@ export default function LandingPage() {
               </div>
               <div className="relative aspect-square w-full mt-auto rounded-sm overflow-hidden">
                 <Image 
-                  src={`https://picsum.photos/seed/expert${i}/400/400`}
+                  src={expert.image}
                   alt={expert.name}
                   fill
                   className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
@@ -256,25 +259,25 @@ export default function LandingPage() {
               time: '9:00 AM - 10:20 AM',
               title: 'No-code tech & digital building',
               desc: 'Learn how to scale your product without writing a single line of code.',
-              seed: 'agenda1'
+              image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=400&h=400&fit=crop"
             },
             {
               time: '10:00 AM - 11:30 AM',
               title: 'UX that works everywhere',
               desc: 'Design for global accessibility and create experiences that reach everyone.',
-              seed: 'agenda2'
+              image: "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=400&h=400&fit=crop"
             },
             {
               time: '10:00 AM - 11:30 AM',
               title: 'Visual storytelling for creatives',
               desc: 'Master the art of visual design and tell stories that inspire action.',
-              seed: 'agenda3'
+              image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=400&h=400&fit=crop"
             }
           ].map((item, i) => (
             <div key={i} className="flex flex-col md:flex-row gap-8 items-start p-6 bg-white border border-gray-100 hover:shadow-xl transition-shadow duration-300 rounded-sm">
               <div className="relative w-full md:w-56 aspect-[4/3] md:aspect-square flex-shrink-0 bg-gray-100 rounded-sm overflow-hidden">
                 <Image 
-                  src={`https://picsum.photos/seed/${item.seed}/400/400`}
+                  src={item.image}
                   alt={item.title}
                   fill
                   className="object-cover grayscale hover:grayscale-0 transition-opacity duration-300"

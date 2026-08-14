@@ -305,6 +305,32 @@ export default function LandingPage() {
           ))}
         </div>
       </section>
+
+      {/* Newsletter Signup */}
+      <section className="max-w-7xl mx-auto px-6 py-24">
+        <div className="bg-[#F7F7F7] rounded-xl p-12 md:p-20 text-center max-w-4xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-medium tracking-tight mb-4">
+            Stay in the loop
+          </h2>
+          <p className="text-gray-600 mb-10 max-w-md mx-auto font-normal text-lg">
+            Get the latest updates on event schedules, new speakers, and exclusive content directly in your inbox.
+          </p>
+          <form className="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto" onSubmit={(e) => e.preventDefault()}>
+            <input 
+              type="email" 
+              placeholder="Enter your email address" 
+              className="flex-1 px-6 py-3.5 rounded-full bg-white border border-gray-200 focus:outline-none focus:ring-2 focus:ring-black/5 focus:border-black transition-all text-sm"
+              required
+            />
+            <button 
+              type="submit" 
+              className="bg-black text-white px-8 py-3.5 rounded-full text-sm font-medium hover:bg-gray-800 transition-colors whitespace-nowrap"
+            >
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </section>
     </main>
   );
 }
